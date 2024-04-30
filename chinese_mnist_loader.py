@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 import os
 
-def load_chinese_mnist(base_path: Path = Path("chinese_mnist")):
+def load_chinese_mnist(base_path: Path = Path("/content/COMP294/chinese-mnist/chinese_mnist")):
     csv = pd.read_csv(base_path / 'chinese_mnist.csv')
     
     images = []

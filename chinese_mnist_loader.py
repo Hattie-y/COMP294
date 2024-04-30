@@ -16,7 +16,7 @@ def load_chinese_mnist(base_path: Path = Path("chinese_mnist")):
     csv_raw = StringIO(response.text)
     csv = pd.read_csv(csv_raw)
     
-    #csv = pd.read_csv(base_path / 'chinese_mnist.csv')
+    #csv = pd.read_csv(base_path /'chinese_mnist'/ 'chinese_mnist.csv')
     
     images = []
     labels = []

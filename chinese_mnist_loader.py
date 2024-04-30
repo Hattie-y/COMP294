@@ -1,4 +1,6 @@
 import pandas as pd
+import requests
+from io import StringIO
 from PIL import Image
 import torchvision.transforms as transforms
 import torch
@@ -6,7 +8,16 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 
 def load_chinese_mnist(base_path: Path = Path("chinese_mnist")):
-    csv = pd.read_csv(base_path / 'chinese_mnist.csv')
+    # URL for the raw CSV on GitHub
+    url = 'https://raw.githubusercontent.com/username/repo/main/path/to/chinese_mnist.csv'
+    
+    # Download the CSV data from GitHub
+    response = requests.get(url)
+    csv_raw = StringIO(response.text)
+    csv = pd.read_csv(csv_raw)
+    
+    #csv = pd.read_csv(base_path / 'chinese_mnist.csv')
+    
     images = []
     labels = []
     for idx, row in csv.iterrows():

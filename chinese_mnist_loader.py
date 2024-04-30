@@ -9,7 +9,7 @@ from pathlib import Path
 
 def load_chinese_mnist(base_path: Path = Path("chinese_mnist")):
     # URL for the raw CSV on GitHub
-    url = 'https://raw.githubusercontent.com/Hattie-y/repo/main/chinese_mnist/chinese_mnist.csv'
+    url = 'https://raw.githubusercontent.com/Hattie-y/COMP294/main/chinese_mnist/chinese_mnist.csv'
     
     # Download the CSV data from GitHub
     response = requests.get(url)

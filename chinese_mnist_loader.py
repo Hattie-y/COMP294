@@ -6,8 +6,12 @@ import torchvision.transforms as transforms
 import torch
 import matplotlib.pyplot as plt
 from pathlib import Path
+import os
 
 def load_chinese_mnist(base_path: Path = Path("chinese_mnist")):
+    print(os.getcwd())
+    print(base_path.resolve())
+    
     # URL for the raw CSV on GitHub
     url = 'https://raw.githubusercontent.com/Hattie-y/COMP294/main/chinese_mnist/chinese_mnist.csv'
     

@@ -23,7 +23,7 @@ def load_chinese_mnist(base_path: Path = Path("chinese_mnist")):
     images = []
     labels = []
     for idx, row in csv.iterrows():
-        image_path = base_path /'chinese_mnist'/ 'data' / 'data' / f"input_{row['suite_id']}_{row['sample_id']}_{row['code']}.jpg"
+        image_path = base_path / 'data' / 'data' / f"input_{row['suite_id']}_{row['sample_id']}_{row['code']}.jpg"
         with Image.open(image_path) as img:
             image_tensor = transforms.PILToTensor()(img)
             images.append(image_tensor.unsqueeze(0))  # 保证图像张量是四维的
